@@ -18,7 +18,8 @@ my_instance = ec2.create_instances(
 # grab reference to our newly-created instance
 instance = ec2.Instance(my_instance[0].id)
 
-# write instance id to file
+# write instance id to 'instance.txt' file, so we can terminate them easily later
+# so we don't get charged money =P
 with open('instance.txt', 'w+') as f:
     f.write(my_instance[0].id)
 
